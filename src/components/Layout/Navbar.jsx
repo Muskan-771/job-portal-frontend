@@ -5,7 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai"; // Import the close icon
-
+const baseurl="https://career-connect-backend-4sfo.onrender.com"
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const { isAuthorized, setIsAuthorized, user } = useContext(Context);
@@ -14,7 +14,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:4000/api/v1/user/logout",
+        `${baseurl}/api/v1/user/logout`,
         {
           withCredentials: true,
         }

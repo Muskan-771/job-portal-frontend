@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../main";
+const baseurl="https://career-connect-backend-4sfo.onrender.com"
 const JobDetails = () => {
   const { id } = useParams();
   const [job, setJob] = useState({});
@@ -12,7 +13,7 @@ const JobDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/job/${id}`, {
+      .get(`${baseurl}/api/v1/job/${id}`, {
         withCredentials: true,
       })
       .then((res) => {
